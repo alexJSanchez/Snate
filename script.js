@@ -1,32 +1,36 @@
-//Define html elemnents
-const borad = document.getElementById();
+// Define HTML elements
+const board = document.getElementById("game-board");
 
-//Define game variables
+// Define game variables
 let snake = [{ x: 10, y: 10 }];
 
-//Draw game map, snake, food
+// Draw game map, snake, food
 function draw() {
-	borad.innerHTML = "";
+	board.innerHTML = "";
 	drawSnake();
 }
 
 // Draw snake
 function drawSnake() {
-	snake.forEach((segments) => {
-		const snakeElement = createGameElements("div", "snake");
-		setPosition(snakeElement, segments);
+	snake.forEach((segment) => {
+		const snakeElement = createGameElement("div", "snake");
+		setPosition(snakeElement, segment);
+		board.appendChild(snakeElement);
 	});
 }
 
-//Create a snake and or food cube/div
-function createGameElements(tag, className) {
+// Create a snake or food cube/div
+function createGameElement(tag, className) {
 	const element = document.createElement(tag);
 	element.className = className;
 	return element;
 }
 
-//set the position of snake or food
-function setPosition(elemnent, position) {
-	elemnent.style.gridColumn = position.x;
-	elemnent.style.gridRow = position.y;
+// Set the position of snake or food
+function setPosition(element, position) {
+	element.style.gridColumnStart = position.x;
+	element.style.gridRowStart = position.y;
 }
+
+// Test draw function
+draw();
