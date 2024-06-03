@@ -3,3 +3,9 @@ const borad = document.getElementById();
 
 //Define game variables
 let snake = [{ x: 10, y: 10 }];
+
+//Draw game map, snake, food
+function draw() {
+	borad.innerHTML = "";
+	drawSnake();
+}
