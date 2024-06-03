@@ -1,1 +1,2 @@
-console.log("test");
+//Define html elemnents
+const borad = document.getElementById();
